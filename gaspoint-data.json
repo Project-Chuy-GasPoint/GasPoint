@@ -30,6 +30,31 @@
         "lat": 8.369782,
         "lng": 124.864501,
         "img": ""
+    },
+
+    {
+        "title": "Pryce Gas Manolo Fortich Sales Center",
+        "locationType": "Cooking Gas",
+        "description": "Official Pryce Gas distributor providing LPG refills and replacements.",
+        "lat": 8.363918,
+        "lng": 124.859550,
+        "img": ""
+    },
+    {
+        "title": "Super Gasul / Petron Gasul Dealer",
+        "locationType": "Cooking Gas",
+        "description": "Local dealer selling certified Petron Gasul cylinders.",
+        "lat": 8.372512,
+        "lng": 124.862771,
+        "img": ""
+    },
+    {
+        "title": "Fiesta Gas Dealer - Dalirig",
+        "locationType": "Cooking Gas",
+        "description": "Affordable Fiesta Gas refills and delivery for Dalirig area.",
+        "lat": 8.401221,
+        "lng": 124.851982,
+        "img": ""
     }
     
 ]
