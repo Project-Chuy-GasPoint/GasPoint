@@ -46,5 +46,11 @@
    "description": "Manolo KRIS LPG STATION",
    "lat": 8.36815,
    "lng": 124.86510
+},
+{
+  "title":"Phoenix Super Lpg",
+   "description": "Damilag Phoenix Super Lpg",
+   "lat": 8.36331, 
+   "lng": 124.81246
 }
 ]
