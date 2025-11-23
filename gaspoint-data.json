@@ -22,8 +22,9 @@
   "lng": 124.8122548
    },
 {
-    "title":"Prycegas Alae Store",
-   "description": "Alae PryceGas",
+    "title":"Krominch Trading Store",
+    "image": "images/Krominch.png",
+   "description": "Alae PryceGas Reseller Store",
    "lat": 8.420712468030786,
    "lng": 124.81331325450262
 },
@@ -75,6 +76,7 @@
 },
 {
   "title":"Salvana's Store",
+  "image": "images/Salvanas Store.png",
    "description": "Alae Salvana's Store Gasul Reseller",
    "lat": 8.420920517746413,   
    "lng": 124.8123726334196
