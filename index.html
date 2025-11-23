@@ -32,15 +32,21 @@ fetch("gaspoint-data.json")
   .then(data => {
     gasStores = data;
     gasStores.forEach(store => {
-      L.marker([store.lat, store.lng])
-        .addTo(map)
-        .bindPopup(
-          "<b>" + store.title + "</b><br>" +
-          store.description +
-          (store.contact ? "<br><b>Contact:</b> " + store.contact : "")
-        );
+
+      let popupHtml = 
+        "<b>" + store.title + "</b><br>" +
+        store.description +
+        (store.contact ? "<br><b>Contact:</b> " + store.contact : "");
+
+      
+      if (store.image) {
+        popupHtml += `<br><img src="${store.image}" width="150">`;
+      }
+
+      L.marker([store.lat, store.lng]).addTo(map).bindPopup(popupHtml);
     });
   });
+
 
 const knownLocations = {
   "damilag": [8.3503, 124.8121],
