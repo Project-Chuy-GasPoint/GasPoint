@@ -120,5 +120,13 @@
       "contact": "09123456789",
       "lat": 8.420508010293913,
       "lng": 124.81836582983917
+   },
+   {
+      "title": "8's LOVE STORE",
+      "image": "images/8'S LOVE.png",
+      "description": "Reseller",
+      "contact": "09123456789",
+      "lat": 8.417870587093969,
+      "lng": 124.81241083538981
    }
 ]
