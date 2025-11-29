@@ -128,5 +128,13 @@
       "contact": "09123456789",
       "lat": 8.417870587093969,
       "lng": 124.81241083538981
-   }
+   },
+ {
+   "title": "M.I SIMBRE GENERAL MERCHANDISE",
+      "image": "images/GENERAL.png",
+      "description": "Reseller",
+      "contact": "09123456789",
+      "lat": 8.323444526360753,
+      "lng": 124.80920005264566
+ }
 ]
