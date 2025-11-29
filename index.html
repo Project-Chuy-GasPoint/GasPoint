@@ -26,14 +26,17 @@
 </div>
 
 <script>
-document.getElementById("map").style.height = window.innerHeight + "px";
+document.getElementById("map").style.height = "600px";
 
 const street = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "" });
-
 const satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { attribution: "" });
 
 const map = L.map("map", { center: [8.3646, 124.8651], zoom: 13, layers: [street] });
-L.control.layers({ "OpenStreetMap": street, "Satellite": satellite }).addTo(map);
+L.control.layers(
+  { "OpenStreetMap": street, "Satellite": satellite },
+  null,
+  { collapsed: false }
+).addTo(map);
 
 let gasStores = [];
 let markers = []; 
@@ -94,11 +97,6 @@ const filterControl = L.control({ position: 'topright' });
 
 filterControl.onAdd = function(map) {
   const div = L.DomUtil.create('div', 'filter-box');
-  div.innerHTML = `
-    <label><input type="checkbox" id="showBlue" checked> Blue LPG</label><br>
-    <label><input type="checkbox" id="showRed" checked> Red LPG</label>
-  `;
-
   div.innerHTML = `
     <label><input type="checkbox" id="showBlue" checked> Blue LPG</label><br>
     <label><input type="checkbox" id="showRed" checked> Red LPG</label>
