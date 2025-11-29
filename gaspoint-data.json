@@ -144,6 +144,14 @@
       "contact": "09123456789",
       "lat": 8.321744992125463,
       "lng": 124.80896139734783
+ },
+ {
+  "title": "MEMEN'S STORE",
+      "image": "images/men.png",
+      "description": "Reseller",
+      "contact": "09123456789",
+      "lat": 8.324457800900673, 
+      "lng": 124.81079422401783
  }
  
 ]
