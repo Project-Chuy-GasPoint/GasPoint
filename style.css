@@ -11,6 +11,25 @@
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links button {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: white;
+  color: #005fa3;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
 /* Title */
 .page-title {
     text-align: center;
