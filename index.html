@@ -51,16 +51,7 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
       <div id="map"></div>
     </div>
 
-  </div>
-</div>
-
-<section id="about" class="info-section mt-4">
-  <h2>About</h2>
-  <p>GasPoint helps locate nearby LPG stores quickly using an interactive map and organized shop list.</p>
-</section>
-
 <script>
-document.getElementById("map").style.height = "600px";
 
 
 const street = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors" });
@@ -87,12 +78,18 @@ fetch("gaspoint-data.json")
         if(store.contact) popupHtml += `<br><b>Contact:</b> ${store.contact}`;
         if(store.image) popupHtml += `<br><img src="${store.image}" width="150">`;
 
-        const redIcon = L.icon({ iconUrl:"images/red lpg.png", iconSize:[40,40], iconAnchor:[20,40], popupAnchor:[0,-40] });
-        const blueIcon = L.icon({ iconUrl:"images/blue lpg.png", iconSize:[40,40], iconAnchor:[20,40], popupAnchor:[0,-40] });
+        const redIcon = L.icon
+        ({ iconUrl:"images/red lpg.png", iconSize:[40,40], iconAnchor:[20,40], popupAnchor:[0,-40] });
+        const blueIcon = L.icon
+        ({ iconUrl:"images/blue lpg.png", iconSize:[40,40], iconAnchor:[20,40], popupAnchor:[0,-40] });
 
         let useIcon = redIcon;
         let title = store.title.toLowerCase();
-        if(title.includes("phoenix") || title.includes("gd lpg") || title.includes("kris") || title.includes("apex") || title.includes("petron")){
+        if(title.includes("phoenix")
+         || title.includes("gd lpg")
+         || title.includes("kris")
+         || title.includes("apex" )
+         || title.includes("petron")){
             useIcon = blueIcon;
         }
 
@@ -171,7 +168,6 @@ function searchLocation(){
 
 function goHome(){ window.scrollTo({top:0, behavior:'smooth'});}
 function goShops(){ document.getElementById('shopList').scrollIntoView({behavior:'smooth'});}
-function goAbout(){ document.getElementById('about').scrollIntoView({behavior:'smooth'});}
 </script>
 
 </body>
