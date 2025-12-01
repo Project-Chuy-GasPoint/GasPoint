@@ -1,7 +1,14 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eef3ff;
+.main-header {
+  width: 100%;
+  background: #005fa3;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 /* Title */
