@@ -25,7 +25,10 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
 <body>
 
 <header class="main-header">
-  <div class="logo">Project Chuy: GasPoint</div>
+  <div class="logo">
+    <img src="images\gaspoint-logo.png" alt="Logo" style="height:40px; width:auto; margin-right:10px;">
+    Project Chuy: GasPoint
+  </div>
   <nav class="nav-links">
     <button onclick="goHome()">Home</button>
     <button onclick="goShops()">Shops</button>
@@ -35,24 +38,40 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
 <div class="container-fluid mt-3">
   <div class="row">
 
-    <!-- Sidebar -->
+  <!-- Sidebar -->
     <div class="col-md-3">
-      <input id="locationSearch" class="form-control mb-2" placeholder="Enter barangay">
-      <button class="btn btn-primary w-100 mb-3" onclick="searchLocation()">Search</button>
 
-      <div class="card mb-3">
-        <div class="card-header bg-primary text-white">LPG Shops</div>
-        <ul class="list-group list-group-flush shop-list" id="shopList">
-        </ul>
+  <!-- Weather card -->
+  <div class="weather-box mb-3">
+    <div class="card">
+      <div class="card-header text-white">Current Weather</div>
+      <div class="card-body">
+        <button class="btn w-100 mb-2" onclick="getWeather()">Check Weather</button>
+        <div id="weatherResult" style="font-size: 14px;"></div>
       </div>
     </div>
+  </div>
+
+  <!-- LPG Shops List -->
+  <div class="card mb-3">
+    <div class="card-header bg-primary text-white">LPG Shops</div>
+    <ul class="list-group list-group-flush shop-list" id="shopList"></ul>
+  </div>
+
+</div>
 
     <div class="col-md-9">
+
+    <!-- Search bar -->
+  <div class="search-box mb-3">
+    <input id="locationSearch" placeholder="Enter barangay">
+    <button onclick="searchLocation()">Search</button>
+  </div>
+
       <div id="map"></div>
     </div>
-
+</div>
 <script>
-
 
 const street = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors" });
 const satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles © Esri" });
@@ -70,7 +89,6 @@ fetch("gaspoint-data.json")
     placeMarkers();
     loadShops();
 });
-
 
   function placeMarkers(){
     gasStores.forEach(store => {
@@ -165,9 +183,44 @@ function searchLocation(){
     map.setView(knownLocations[q],15);
 }
 
-
 function goHome(){ window.scrollTo({top:0, behavior:'smooth'});}
 function goShops(){ document.getElementById('shopList').scrollIntoView({behavior:'smooth'});}
+
+const apiKey = "931a7542b975d1d2e15946ee8e9b97cf";
+
+async function getWeather() {
+    console.log("Prompt opened. " + Date());
+    const city = prompt("Enter a city name:");
+    console.log("Prompt closed. " + Date());
+
+    if (!city) {
+        alert("No city entered.");
+        console.log("No city entered. " + Date());
+        return;
+
+}
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("City not found");
+
+        const data = await response.json();
+
+        const weatherResult = document.getElementById("weatherResult");
+        weatherResult.innerHTML = `
+            <h5>${data.name}, ${data.sys.country}</h5>
+            <p><b>Temperature:</b> ${data.main.temp}°C</p>
+            <p><b>Weather:</b> ${data.weather[0].description}</p>
+            <p><b>Humidity:</b> ${data.main.humidity}%</p>
+            <p><b>Wind Speed:</b> ${data.wind.speed} m/s</p>
+        `;
+        } catch (error) {
+        alert("Error: " + error.message);
+        console.log("Error: " + error.message);
+    }
+}
+
 </script>
 
 </body>
