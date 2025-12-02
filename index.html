@@ -35,10 +35,8 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
 <div class="container-fluid mt-3">
   <div class="row">
 
-    <!-- Sidebar -->
+  <!-- Sidebar -->
     <div class="col-md-3">
-
-        
 
   <!-- Search bar -->
   <input id="locationSearch" class="form-control mb-2" placeholder="Enter barangay">
@@ -50,11 +48,7 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
     <ul class="list-group list-group-flush shop-list" id="shopList"></ul>
   </div>
 
-  
-
 </div>
-
-
 
     <div class="col-md-9">
 
@@ -68,12 +62,10 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
   </div>
 </div>
 
-
       <div id="map"></div>
     </div>
 </div>
 <script>
-
 
 const street = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors" });
 const satellite = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { attribution: "Tiles © Esri" });
@@ -91,7 +83,6 @@ fetch("gaspoint-data.json")
     placeMarkers();
     loadShops();
 });
-
 
   function placeMarkers(){
     gasStores.forEach(store => {
@@ -186,7 +177,6 @@ function searchLocation(){
     map.setView(knownLocations[q],15);
 }
 
-
 function goHome(){ window.scrollTo({top:0, behavior:'smooth'});}
 function goShops(){ document.getElementById('shopList').scrollIntoView({behavior:'smooth'});}
 
@@ -201,7 +191,6 @@ async function getWeather() {
         alert("No city entered.");
         console.log("No city entered. " + Date());
         return;
-
 
 }
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
