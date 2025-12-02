@@ -189,6 +189,18 @@ function searchLocation(){
 
 function goHome(){ window.scrollTo({top:0, behavior:'smooth'});}
 function goShops(){ document.getElementById('shopList').scrollIntoView({behavior:'smooth'});}
+
+const apiKey = "931a7542b975d1d2e15946ee8e9b97cf";
+
+async function getWeather() {
+    console.log("Prompt opened. " + Date());
+    const city = prompt("Enter a city name (Example: Manolo Fortich)");
+    console.log("Prompt closed. " + Date());
+
+
+}
+
+
 </script>
 
 </body>
