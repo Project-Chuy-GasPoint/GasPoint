@@ -187,7 +187,7 @@ const apiKey = "931a7542b975d1d2e15946ee8e9b97cf";
 
 async function getWeather() {
     console.log("Prompt opened. " + Date());
-    const city = prompt("Enter a city name (Example: Manolo Fortich)");
+    const city = prompt("Enter a city name:");
     console.log("Prompt closed. " + Date());
 
     if (!city) {
@@ -195,6 +195,7 @@ async function getWeather() {
         console.log("No city entered. " + Date());
         return;
 
+        
 }
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
