@@ -37,17 +37,38 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""><
 
     <!-- Sidebar -->
     <div class="col-md-3">
-      <input id="locationSearch" class="form-control mb-2" placeholder="Enter barangay">
-      <button class="btn btn-primary w-100 mb-3" onclick="searchLocation()">Search</button>
 
-      <div class="card mb-3">
-        <div class="card-header bg-primary text-white">LPG Shops</div>
-        <ul class="list-group list-group-flush shop-list" id="shopList">
-        </ul>
-      </div>
-    </div>
+        
+
+  <!-- Search bar -->
+  <input id="locationSearch" class="form-control mb-2" placeholder="Enter barangay">
+  <button class="btn btn-primary w-100 mb-3" onclick="searchLocation()">Search</button>
+
+  <!-- LPG Shops List -->
+  <div class="card mb-3">
+    <div class="card-header bg-primary text-white">LPG Shops</div>
+    <ul class="list-group list-group-flush shop-list" id="shopList"></ul>
+  </div>
+
+  
+
+</div>
+
+
 
     <div class="col-md-9">
+
+    <div class="weather-box mb-3">
+  <div class="card">
+    <div class="card-header text-white">Current Weather</div>
+    <div class="card-body">
+      <button class="btn w-100 mb-2" onclick="getWeather()">Check Weather</button>
+      <div id="weatherResult" style="font-size: 14px;"></div>
+    </div>
+  </div>
+</div>
+
+
       <div id="map"></div>
     </div>
 
