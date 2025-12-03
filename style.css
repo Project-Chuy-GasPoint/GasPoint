@@ -124,18 +124,6 @@
     font-size: 14px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.25);
 }
-<<<<<<< HEAD
-#shopList {
-    max-height: 65vh;      /* limit height so it doesn’t grow too tall */
-    overflow-y: auto;      /* enable vertical scroll */
-    overflow-x: hidden;    /* hide horizontal scroll */
-    padding-right: 5px;    /* avoid overlapping scrollbar */
-}
-#shopList {
-    scroll-behavior: smooth;
-}
-
-=======
 
 .weather-box {
     max-width: 500px;   
@@ -154,4 +142,12 @@
 .weather-box .btn:hover {
     background-color: #0f4ec7;
 }
->>>>>>> 38d20522a8aeb57d23b8ae92c7866ded3ad92b14
+#shopList {
+    max-height: 65vh;      /* limit height so it doesn’t grow too tall */
+    overflow-y: auto;      /* enable vertical scroll */
+    overflow-x: hidden;    /* hide horizontal scroll */
+    padding-right: 5px;   
+}
+#shopList {
+    scroll-behavior: smooth;
+}
